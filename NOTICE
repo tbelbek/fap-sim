@@ -1,0 +1,13 @@
+This tool reproduces parts of the Flipper Zero firmware API so that a FAP can be
+built and run on a host computer.
+
+- The declarations in include/ describe the firmware's public API.
+- gui.c implements the firmware's stock GUI modules (applications/services/gui/
+  modules/*.c). Its drawing geometry is copied from that source, which is
+  licensed GPL-3.0-or-later by Flipper Devices Inc.
+
+Because of the second point this repository is GPL-3.0-or-later. The firmware it
+derives from is at https://github.com/flipperdevices/flipperzero-firmware
+
+No firmware code is vendored here: gui.c is a reimplementation written against
+the same layout constants, and the shim implements the API surface from scratch.
